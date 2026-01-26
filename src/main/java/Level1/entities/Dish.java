@@ -1,15 +1,11 @@
 package Level1.entities;
 
-public class Dish {
+public abstract class Dish {
     private String name;
     private boolean vegan;
     private boolean glutenFree;
 
     public Dish(String name) {
-        this.name = name;
-    }
-
-    public void setName(String name) {
         this.name = name;
     }
 
