@@ -1,9 +1,9 @@
-package builder;
+package Level1.entities;
 
 public class Dish {
-    String name;
-    boolean vegan;
-    boolean glutenFree;
+    private String name;
+    private boolean vegan;
+    private boolean glutenFree;
 
     public Dish(String name) {
         this.name = name;
