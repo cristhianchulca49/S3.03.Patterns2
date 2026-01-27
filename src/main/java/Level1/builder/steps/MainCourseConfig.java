@@ -1,7 +1,5 @@
 package Level1.builder.steps;
 
-import Level1.Main;
-
 public interface MainCourseConfig extends BuildStep {
     MainCourseConfig isMainVegan();
     MainCourseConfig isMainGlutenFree();

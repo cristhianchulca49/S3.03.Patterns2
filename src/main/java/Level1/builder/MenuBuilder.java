@@ -7,8 +7,7 @@ import Level1.domain.entities.Dish;
 import Level1.domain.entities.Entrant;
 import Level1.domain.entities.MainCourse;
 
-public class MenuBuilder implements StarStep, EntrantConfig, MainCourseConfig, BuildStep {
-    private Dish currentDish;
+public class MenuBuilder implements StartStep, EntrantConfig, MainCourseConfig, BuildStep {
 
     private Dish entrant;
     private MainCourse mainCourse;
