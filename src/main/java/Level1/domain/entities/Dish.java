@@ -1,4 +1,4 @@
-package Level1.entities;
+package Level1.domain.entities;
 
 public abstract class Dish {
     private String name;
