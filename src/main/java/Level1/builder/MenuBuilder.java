@@ -1,41 +1,82 @@
 package Level1.builder;
 
-import Level1.builder.steps.EntrantConfigStep;
-import Level1.builder.steps.MainCourseConfigStep;
-import Level1.builder.steps.StarStep;
+import Level1.builder.steps.*;
 import Level1.domain.Menu;
-import Level1.entities.Dish;
-import Level1.entities.Entrant;
-import Level1.entities.MainCourse;
+import Level1.domain.entities.Complement;
+import Level1.domain.entities.Dish;
+import Level1.domain.entities.Entrant;
+import Level1.domain.entities.MainCourse;
 
-public class MenuBuilder implements StarStep, EntrantConfigStep, MainCourseConfigStep {
-    private Menu menu;
+public class MenuBuilder implements StarStep, EntrantConfig, MainCourseConfig, BuildStep {
     private Dish currentDish;
 
+    private Dish entrant;
+    private MainCourse mainCourse;
+    private Dish complement;
+    private String drink;
 
     @Override
-    public EntrantConfigStep withEntrant(String name) {
-        currentDish = new Entrant(name);
-        menu.setEntrant(currentDish);
+    public EntrantConfig withEntrant(String name) {
+        this.entrant = new Entrant(name);
         return this;
     }
 
     @Override
-    public EntrantConfigStep isVegan() {
-        currentDish.setVegan();
+    public EntrantConfig isEntrantVegan() {
+        this.entrant.setVegan();
         return this;
     }
 
     @Override
-    public EntrantConfigStep isGlutenFree() {
-        currentDish.setGlutenFree();
+    public EntrantConfig isEntrantGlutenFree() {
+        this.entrant.setGlutenFree();
         return this;
     }
 
     @Override
-    public MainCourseConfigStep withMainCourse(String name) {
-        currentDish = new MainCourse(name);
-        menu.setMainCourse(currentDish);
+    public MainCourseConfig withMainCourse(String name) {
+        this.mainCourse = new MainCourse(name);
         return this;
+    }
+
+    @Override
+    public MainCourseConfig isMainVegan() {
+        this.mainCourse.setVegan();
+        return this;
+    }
+
+    @Override
+    public MainCourseConfig isMainGlutenFree() {
+        this.mainCourse.setGlutenFree();
+        return this;
+    }
+
+    @Override
+    public MainCourseConfig withSupplement(String supplement) {
+        this.mainCourse.setSupplement(supplement);
+        return this;
+    }
+
+    @Override
+    public BuildStep withCoffee(String coffee) {
+        this.complement = new Complement(coffee);
+        return this;
+    }
+
+    @Override
+    public BuildStep withDessert(String dessert) {
+        this.complement = new Complement(dessert);
+        return this;
+    }
+
+    @Override
+    public BuildStep withDrink(String drink) {
+        this.drink = drink;
+        return this;
+    }
+
+    @Override
+    public Menu build() {
+        return new Menu(entrant, mainCourse, complement, drink);
     }
 }
