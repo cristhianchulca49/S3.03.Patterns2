@@ -16,4 +16,13 @@ public abstract class Dish {
     public void setGlutenFree() {
         this.glutenFree = true;
     }
+
+    @Override
+    public String toString() {
+        return String.format("%s%s%s",
+                this.name,
+                this.vegan ? " (Vegan)" : "",
+                this.glutenFree ? " (GlutenFree)" : ""
+        );
+    }
 }

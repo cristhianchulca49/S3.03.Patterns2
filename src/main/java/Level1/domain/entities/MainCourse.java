@@ -10,4 +10,12 @@ public class MainCourse extends Dish {
     public void setSupplement(String supplement) {
         this.supplement = supplement;
     }
+
+    @Override
+    public String toString() {
+        return String.format("%s%s",
+                super.toString(),
+                (this.supplement != null ? ", Supplement: " + this.supplement : "")
+        );
+    }
 }

@@ -15,4 +15,21 @@ public class Menu {
         this.complement = complement;
         this.drink = drink;
     }
+
+    @Override
+    public String toString() {
+        return String.format(
+                """
+                        --- MENU ORDER ---
+                        1. Entrant: %s
+                        2. Main:    %s
+                        3. Complement:  %s
+                        4. Drink:   %s
+                        ------------------""",
+                this.entrant != null ? this.entrant : "None",
+                this.mainCourse != null ? this.mainCourse : "None",
+                this.complement != null ? this.complement : "None",
+                this.drink != null ? this.drink : "No drink"
+        );
+    }
 }
