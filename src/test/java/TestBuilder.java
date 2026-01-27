@@ -9,11 +9,11 @@ public class TestBuilder {
     public void testExecutiveMenuBuilder() {
         Menu executiveMenu = new MenuBuilder()
                 .withEntrant("Amanida Mediterrània")
-                .isEntrantVegan()
-                .isEntrantGlutenFree()
+                    .isVegan()
+                    .isGlutenFree()
                 .withMainCourse("Filet de Vedella")
-                .isMainVegan()
-                .isMainGlutenFree()
+                    .isVegan()
+                    .isGlutenFree()
                 .withSupplement("Guarnició extra")
                 .withDessert("Mousse de xocolata")
                 .withDrink("Vi Negre")
@@ -34,7 +34,7 @@ public class TestBuilder {
     public void testHalfMenuBuilder() {
         Menu halfMenu = new MenuBuilder()
                 .withMainCourse("Risotto de bolets")
-                .isMainVegan()
+                .isVegan()
                 .withDrink("Aigua")
                 .build();
 

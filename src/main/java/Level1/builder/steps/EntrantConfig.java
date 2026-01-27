@@ -1,7 +1,7 @@
 package Level1.builder.steps;
 
 public interface EntrantConfig {
-    EntrantConfig isEntrantVegan();
-    EntrantConfig isEntrantGlutenFree();
+    EntrantConfig isVegan();
+    EntrantConfig isGlutenFree();
     MainCourseConfig withMainCourse(String name);
 }
