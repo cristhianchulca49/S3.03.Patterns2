@@ -1,6 +1,7 @@
 package Level2.domain.agency;
 
 import Level2.domain.observer.Observer;
+import Level2.domain.stock.StockState;
 
 public class StockBrokerAgency implements Observer {
 

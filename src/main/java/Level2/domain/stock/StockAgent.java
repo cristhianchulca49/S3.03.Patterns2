@@ -1,6 +1,5 @@
 package Level2.domain.stock;
 
-import Level2.domain.agency.StockState;
 import Level2.domain.observer.Observer;
 import Level2.domain.observer.Subject;
 
@@ -41,5 +40,6 @@ public class StockAgent implements Subject {
     @Override
     public void notifyObserver() {
         observers.forEach(observer -> observer.update(status, currentPrice));
+        observers.forEach(System.out::println);
     }
 }
