@@ -1,5 +1,7 @@
 package Level2.domain.observer;
 
+import Level2.domain.agency.StockState;
+
 public interface Observer {
-    void update(String state, double price);
+    void update(StockState state, double price);
 }
