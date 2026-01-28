@@ -22,7 +22,8 @@ public class StockBrokerAgency implements Observer {
         this.price = price;
     }
 
-    public String getNotificationMessage() {
+    @Override
+    public String toString() {
         return String.format(TEMPLATE, name, state.name(), price);
     }
 
