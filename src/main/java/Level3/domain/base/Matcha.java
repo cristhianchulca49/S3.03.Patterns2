@@ -12,6 +12,6 @@ public class Matcha implements BubbleTea {
 
     @Override
     public String getDescription() {
-        return "Matcha: 3.20 ";
+        return "Matcha: 3.20€ ";
     }
 }
