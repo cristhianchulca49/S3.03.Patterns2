@@ -12,6 +12,6 @@ public class Tea implements BubbleTea {
 
     @Override
     public String getDescription() {
-        return "Tea: ";
+        return "Tea: 3.00";
     }
 }

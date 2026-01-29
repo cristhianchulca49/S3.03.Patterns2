@@ -12,6 +12,6 @@ public class Match implements BubbleTea {
 
     @Override
     public String getDescription() {
-        return "Match: ";
+        return "Match: 3.20";
     }
 }
