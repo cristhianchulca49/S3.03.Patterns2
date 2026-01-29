@@ -3,6 +3,7 @@ import Level3.domain.model.BubbleTea;
 import org.junit.jupiter.api.Test;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -39,5 +40,18 @@ public class TestDecorator {
 
         assertEquals(expectedDescription, matcha.getDescription());
         assertEquals(expectedPrice, matcha.getPrice());
+    }
+
+    @Test
+    void testDefaultBubbleTea() {
+        List<BubbleTea> bubbleTeaBases = List.of(
+                BubbleTeaBuilder.latte().build(),
+                BubbleTeaBuilder.matcha().build(),
+                BubbleTeaBuilder.tea().build());
+
+        List<String> actualDescription = bubbleTeaBases.stream().map(BubbleTea::getDescription).toList();
+        List<String> expectedDescription = List.of("Latte: 3.50€ ", "Matcha: 3.20€ ", "Tea: 3.00€ ");
+
+        assertEquals(expectedDescription, actualDescription);
     }
 }
