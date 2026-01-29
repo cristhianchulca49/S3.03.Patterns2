@@ -20,6 +20,6 @@ public class FlavorDecorator extends BubbleTeaDecorator {
 
     @Override
     public String getDescription() {
-        return String.format("%s+ Flavor (%s): 0.60", bubbleTea.getDescription(), flavor);
+        return String.format("%s+ Flavor (%s): 0.60€ ", bubbleTea.getDescription(), flavor);
     }
 }

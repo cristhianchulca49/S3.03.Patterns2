@@ -17,6 +17,6 @@ public class SugarDecorator extends BubbleTeaDecorator {
 
     @Override
     public String getDescription() {
-        return bubbleTea.getDescription() + "+ Sugar: 0.50€";
+        return bubbleTea.getDescription() + "+ Sugar: 0.50€ ";
     }
 }
