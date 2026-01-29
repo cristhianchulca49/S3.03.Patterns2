@@ -6,7 +6,7 @@ import Level3.domain.model.BubbleTeaDecorator;
 import java.math.BigDecimal;
 
 public class SugarDecorator extends BubbleTeaDecorator {
-    protected SugarDecorator(BubbleTea bubbleTea) {
+    public SugarDecorator(BubbleTea bubbleTea) {
         super(bubbleTea);
     }
 

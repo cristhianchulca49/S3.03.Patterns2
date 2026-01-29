@@ -8,7 +8,7 @@ import java.math.BigDecimal;
 public class FlavorDecorator extends BubbleTeaDecorator {
     private final String flavor;
 
-    protected FlavorDecorator(BubbleTea bubbleTea, String flavor) {
+    public FlavorDecorator(BubbleTea bubbleTea, String flavor) {
         super(bubbleTea);
         this.flavor = flavor;
     }
