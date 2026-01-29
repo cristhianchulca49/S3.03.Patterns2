@@ -18,12 +18,14 @@ public class StockAgent implements Subject {
     }
 
     public void updateMarketPrice(double newPrice) {
-        if (newPrice > currentPrice) {
-            this.status = StockState.UP;
-        } else if (newPrice < currentPrice) {
-            this.status = StockState.DOWN;
+        StockState newState = StockState.determinateState(newPrice, this.currentPrice);
+
+        if (newState == StockState.STABLE) {
+            return;
         }
-        currentPrice = newPrice;
+
+        this.status = newState;
+        this.currentPrice = newPrice;
         notifyObserver();
     }
 
