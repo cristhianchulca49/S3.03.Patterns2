@@ -31,11 +31,27 @@ public class TestObserver {
 
     @Test
     public void defaultObserverState() {
-        StockAgent agent = new StockAgent();
 
         Observer alphaBrokers = new StockBrokerAgency("Alpha Brokers");
         String actualMessage = alphaBrokers.toString();
         String expectedMessage = "Alpha Brokers received notification: Stock market went UNDEFINED | Current Value: $0.00";
+
+        assertEquals(expectedMessage, actualMessage);
+    }
+
+    @Test
+    public void noChangeObserverState() {
+        StockAgent agent = new StockAgent();
+
+        Observer alphaBrokers = new StockBrokerAgency("Alpha Brokers");
+        agent.addObserver(alphaBrokers);
+
+        agent.updateMarketPrice(150);
+        String expectedMessage = alphaBrokers.toString();
+
+        agent.updateMarketPrice(150);
+        String actualMessage = alphaBrokers.toString();
+
 
         assertEquals(expectedMessage, actualMessage);
 
