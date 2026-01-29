@@ -15,6 +15,7 @@ public class StockBrokerAgency implements Observer {
     public StockBrokerAgency(String name) {
         this.name = name;
         this.state = StockState.UNDEFINED;
+        this.price = 0.0;
     }
 
     @Override
