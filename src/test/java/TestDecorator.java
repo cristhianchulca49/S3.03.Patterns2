@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class TestDecorator {
     @Test
-    public void testFullBubbleTea() {
+    void testFullBubbleTea() {
         BubbleTea latteFull = BubbleTeaBuilder.latte()
                 .withIce()
                 .withTapioca()
@@ -21,5 +21,23 @@ public class TestDecorator {
 
         assertEquals(expectedDescription, latteFull.getDescription());
         assertEquals(expectedPrice, latteFull.getPrice());
+    }
+
+
+    @Test
+    public void testTeaWithIceAndMultipleFlavors() {
+        BubbleTea matcha = BubbleTeaBuilder.matcha()
+                .withIce()
+                .withFlavor("Banana")
+                .withFlavor("Mango")
+                .withFlavor("Strawberry")
+                .withFlavor("Apple")
+                .build();
+
+        String expectedDescription = "Matcha: 3.20€ + Ice: 0.25€ + Flavor (Banana): 0.60€ + Flavor (Mango): 0.60€ + Flavor (Strawberry): 0.60€ + Flavor (Apple): 0.60€ ";
+        BigDecimal expectedPrice = new BigDecimal("5.85");
+
+        assertEquals(expectedDescription, matcha.getDescription());
+        assertEquals(expectedPrice, matcha.getPrice());
     }
 }
