@@ -4,7 +4,7 @@ import Level3.domain.model.BubbleTea;
 
 import java.math.BigDecimal;
 
-public class Match implements BubbleTea {
+public class Matcha implements BubbleTea {
     @Override
     public BigDecimal getPrice() {
         return BigDecimal.valueOf(3.20);
