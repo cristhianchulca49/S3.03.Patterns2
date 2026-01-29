@@ -28,4 +28,16 @@ public class TestObserver {
         assertEquals(expectedUpMessage, actualUpMessage);
         assertEquals(expectedDownMessage, actualDownMessage);
     }
+
+    @Test
+    public void defaultObserverState() {
+        StockAgent agent = new StockAgent();
+
+        Observer alphaBrokers = new StockBrokerAgency("Alpha Brokers");
+        String actualMessage = alphaBrokers.toString();
+        String expectedMessage = "Alpha Brokers received notification: Stock market went UNDEFINED | Current Value: $0.00";
+
+        assertEquals(expectedMessage, actualMessage);
+
+    }
 }
