@@ -27,12 +27,4 @@ public class StockBrokerAgency implements Observer {
     public String toString() {
         return String.format(TEMPLATE, name, state.name(), price);
     }
-
-    public StockState getState() {
-        return state;
-    }
-
-    public double getPrice() {
-        return price;
-    }
 }

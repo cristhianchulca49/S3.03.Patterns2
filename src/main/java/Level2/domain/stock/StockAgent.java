@@ -17,18 +17,6 @@ public class StockAgent implements Subject {
         this.status = StockState.UNDEFINED;
     }
 
-    public List<Observer> getObservers() {
-        return List.copyOf(observers);
-    }
-
-    public double getCurrentPrice() {
-        return currentPrice;
-    }
-
-    public StockState getStatus() {
-        return status;
-    }
-
     public void updateMarketPrice(double newPrice) {
         if (newPrice > currentPrice) {
             this.status = StockState.UP;
